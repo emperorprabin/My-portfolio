@@ -86,8 +86,8 @@ export default function Projects() {
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               {/* Card top gradient */}
-              <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-dark-400/60" />
+              <div className={`h-48 bg-linear-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
+                <div className="absolute inset-0 bg-linear-to-b from-transparent to-dark-400/60" />
                 <span className="text-7xl relative z-10 group-hover:scale-125 transition-transform duration-500">
                   {project.emoji}
                 </span>

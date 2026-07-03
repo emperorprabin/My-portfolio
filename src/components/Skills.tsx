@@ -10,28 +10,21 @@ interface Skill {
 
 const skills: Skill[] = [
   // Frontend
-  { name: 'JavaScript', level: 95, color: 'from-yellow-400 to-yellow-600', icon: '⚡', category: 'Frontend' },
-  { name: 'TypeScript', level: 90, color: 'from-blue-400 to-blue-600', icon: '🔷', category: 'Frontend' },
-  { name: 'React', level: 92, color: 'from-cyan-400 to-cyan-600', icon: '⚛️', category: 'Frontend' },
-  { name: 'HTML/CSS', level: 95, color: 'from-orange-400 to-red-500', icon: '🎨', category: 'Frontend' },
-  { name: 'Next.js', level: 85, color: 'from-gray-400 to-gray-600', icon: '▲', category: 'Frontend' },
-  { name: 'Tailwind CSS', level: 93, color: 'from-teal-400 to-teal-600', icon: '💨', category: 'Frontend' },
+  { name: 'JavaScript', level: 75, color: 'from-yellow-400 to-yellow-600', icon: '⚡', category: 'Frontend' },
+  { name: 'TypeScript', level: 60, color: 'from-blue-400 to-blue-600', icon: '🔷', category: 'Frontend' },
+  { name: 'React', level: 60, color: 'from-cyan-400 to-cyan-600', icon: '⚛️', category: 'Frontend' },
+  { name: 'HTML/CSS', level: 85, color: 'from-orange-400 to-red-500', icon: '🎨', category: 'Frontend' },
 
   // Backend
-  { name: 'Python', level: 88, color: 'from-green-400 to-emerald-600', icon: '🐍', category: 'Backend' },
-  { name: 'Node.js', level: 87, color: 'from-lime-400 to-green-600', icon: '🟢', category: 'Backend' },
-  { name: 'Java', level: 75, color: 'from-red-400 to-red-600', icon: '☕', category: 'Backend' },
-  { name: 'Go', level: 70, color: 'from-sky-400 to-sky-600', icon: '🔵', category: 'Backend' },
-  { name: 'Rust', level: 60, color: 'from-orange-500 to-orange-700', icon: '🦀', category: 'Backend' },
-  { name: 'C++', level: 65, color: 'from-indigo-400 to-indigo-600', icon: '⚙️', category: 'Backend' },
+  { name: 'Python', level: 80, color: 'from-green-400 to-emerald-600', icon: '🐍', category: 'Backend' },
+  { name: 'Node.js', level: 60, color: 'from-lime-400 to-green-600', icon: '🟢', category: 'Backend' },
+  { name: 'C++', level: 70, color: 'from-indigo-400 to-indigo-600', icon: '⚙️', category: 'Backend' },
 
   // Tools & Others
-  { name: 'SQL/PostgreSQL', level: 85, color: 'from-blue-500 to-indigo-600', icon: '🗄️', category: 'Tools' },
-  { name: 'Docker', level: 80, color: 'from-blue-400 to-blue-500', icon: '🐳', category: 'Tools' },
-  { name: 'Git', level: 92, color: 'from-orange-400 to-orange-600', icon: '📦', category: 'Tools' },
-  { name: 'AWS', level: 78, color: 'from-amber-400 to-amber-600', icon: '☁️', category: 'Tools' },
-  { name: 'GraphQL', level: 82, color: 'from-pink-400 to-pink-600', icon: '◈', category: 'Tools' },
-  { name: 'MongoDB', level: 80, color: 'from-green-500 to-green-700', icon: '🍃', category: 'Tools' },
+  { name: 'SQL', level: 60, color: 'from-blue-500 to-indigo-600', icon: '🗄️', category: 'Tools' },
+  { name: 'Git', level: 70, color: 'from-orange-400 to-orange-600', icon: '📦', category: 'Tools' },
+  { name: 'Numpy', level: 80, color: 'from-pink-400 to-pink-600', icon: '◈', category: 'Tools' },
+  { name: 'Pandas', level: 80, color: 'from-purple-400 to-purple-600', icon: '📊', category: 'Tools' },
 ];
 
 function SkillBar({ skill, delay, animate }: { skill: Skill; delay: number; animate: boolean }) {
@@ -51,7 +44,7 @@ function SkillBar({ skill, delay, animate }: { skill: Skill; delay: number; anim
       </div>
       <div className="h-2.5 bg-dark-300 rounded-full overflow-hidden">
         <div
-          className={`h-full rounded-full bg-gradient-to-r ${skill.color} transition-all duration-1000 ${
+          className={`h-full rounded-full bg-linear-to-r ${skill.color} transition-all duration-1000 ${
             animate ? 'animate-progress-fill' : ''
           }`}
           style={{ width: animate ? `${skill.level}%` : '0%', animationDelay: `${delay + 0.3}s` }}
@@ -71,7 +64,7 @@ export default function Skills() {
   return (
     <section id="skills" className="relative py-24 sm:py-32" ref={ref}>
       {/* Background decorations */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-primary-500/30 to-transparent" />
       <div className="absolute top-1/3 right-0 w-72 h-72 bg-primary-600/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/3 left-0 w-72 h-72 bg-accent-500/5 rounded-full blur-3xl" />
 
@@ -93,7 +86,7 @@ export default function Skills() {
           return (
             <div key={category} className="mb-12">
               <h3 className={`text-xl font-bold text-primary-300 mb-6 flex items-center gap-3 ${inView ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                <span className="w-8 h-0.5 bg-gradient-to-r from-primary-500 to-transparent" />
+                <span className="w-8 h-0.5 bg-linear-to-r from-primary-500 to-transparent" />
                 {category === 'Frontend' ? '🎯 Frontend' : category === 'Backend' ? '🛠️ Backend' : '🔧 Tools & DevOps'}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

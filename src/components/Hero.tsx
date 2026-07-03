@@ -1,7 +1,7 @@
 import { ArrowDown, Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const roles = ['Full Stack Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Open Source Contributor'];
+const roles = ['Full Stack Developer', 'Problem Solver'];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -38,7 +38,7 @@ export default function Hero() {
           alt=""
           className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-500/60 via-dark-500/80 to-dark-500" />
+        <div className="absolute inset-0 bg-linear-to-b from-dark-500/60 via-dark-500/80 to-dark-500" />
       </div>
 
       {/* Floating orbs */}
@@ -89,7 +89,7 @@ export default function Hero() {
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-500 opacity-0">
           <a
             href="#projects"
-            className="group px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-500 rounded-2xl text-white font-semibold
+            className="group px-8 py-4 bg-linear-to-r from-primary-600 to-primary-500 rounded-2xl text-white font-semibold
               hover:from-primary-500 hover:to-primary-400 transition-all duration-300 shadow-lg shadow-primary-600/30
               hover:shadow-primary-500/50 hover:-translate-y-1"
           >

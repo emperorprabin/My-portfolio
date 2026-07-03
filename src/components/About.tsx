@@ -58,7 +58,7 @@ export default function About() {
                 className="glass glass-hover rounded-2xl p-6 text-center group hover:-translate-y-2 transition-all duration-500"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
-                <div className={`w-14 h-14 mx-auto mb-4 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center
+                <div className={`w-14 h-14 mx-auto mb-4 rounded-xl bg-linear-to-br ${item.color} flex items-center justify-center
                   group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   <item.icon size={24} className="text-white" />
                 </div>
