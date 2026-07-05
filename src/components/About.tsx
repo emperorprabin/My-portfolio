@@ -2,9 +2,9 @@ import { Code2, Palette, Zap, Coffee } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
 const highlights = [
-  { icon: Code2, label: 'Clean Code', value: '5+ Years', color: 'from-purple-500 to-indigo-500' },
-  { icon: Palette, label: 'UI/UX Design', value: '50+ Projects', color: 'from-pink-500 to-rose-500' },
-  { icon: Zap, label: 'Performance', value: '99+ Scores', color: 'from-amber-500 to-orange-500' },
+  { icon: Code2, label: 'Clean Code', value: 'Learning', color: 'from-purple-500 to-indigo-500' },
+  { icon: Palette, label: 'UI/UX Design', value: 'Building Scalable Projects', color: 'from-pink-500 to-rose-500' },
+  { icon: Zap, label: 'Performance', value: 'Overall Average', color: 'from-amber-500 to-orange-500' },
   { icon: Coffee, label: 'Coffee Consumed', value: '∞ Cups', color: 'from-emerald-500 to-teal-500' },
 ];
 
@@ -26,9 +26,9 @@ export default function About() {
           {/* Text */}
           <div className={`space-y-6 ${inView ? 'animate-fade-in-left' : 'opacity-0'}`}>
             <p className="text-lg text-primary-200/80 leading-relaxed">
-              I'm a passionate full-stack developer with over 5 years of experience building
-              web applications that are both beautiful and functional. I believe in writing
-              clean, maintainable code that stands the test of time.
+              I'm a passionate full-stack developer building web 
+              applications that are both beautiful and functional. 
+              I believe in writing clean, maintainable code that stands the test of time.
             </p>
             <p className="text-lg text-primary-200/80 leading-relaxed">
               My journey started with curiosity about how websites work, and it's grown into
