@@ -25,6 +25,7 @@ const skills: Skill[] = [
   { name: 'Git', level: 70, color: 'from-orange-400 to-orange-600', icon: '📦', category: 'Tools' },
   { name: 'Numpy', level: 80, color: 'from-pink-400 to-pink-600', icon: '◈', category: 'Tools' },
   { name: 'Pandas', level: 80, color: 'from-purple-400 to-purple-600', icon: '📊', category: 'Tools' },
+  { name: 'PyTorch', level: 60, color: 'from-purple-400 to-purple-600', icon: '🔥', category: 'Tools' },
 ];
 
 function SkillBar({ skill, delay, animate }: { skill: Skill; delay: number; animate: boolean }) {
