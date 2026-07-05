@@ -1,12 +1,12 @@
-import { Code2, Palette, Zap, Coffee } from 'lucide-react';
+//import { Code2, Palette, Zap, Coffee } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
-const highlights = [
+/*const highlights = [
   { icon: Code2, label: 'Clean Code', value: 'Learning', color: 'from-purple-500 to-indigo-500' },
   { icon: Palette, label: 'UI/UX Design', value: 'Building Scalable Projects', color: 'from-pink-500 to-rose-500' },
   { icon: Zap, label: 'Performance', value: 'Overall Average', color: 'from-amber-500 to-orange-500' },
   { icon: Coffee, label: 'Coffee Consumed', value: '∞ Cups', color: 'from-emerald-500 to-teal-500' },
-];
+];*/
 
 export default function About() {
   const { ref, inView } = useInView(0.2);
@@ -52,7 +52,7 @@ export default function About() {
 
           {/* Stats cards */}
           <div className={`grid grid-cols-2 gap-4 ${inView ? 'animate-fade-in-right' : 'opacity-0'}`}>
-            {highlights.map((item, i) => (
+              {/*{highlights.map((item, i) => (
               <div
                 key={item.label}
                 className="glass glass-hover rounded-2xl p-6 text-center group hover:-translate-y-2 transition-all duration-500"
@@ -65,7 +65,7 @@ export default function About() {
                 <div className="text-2xl font-bold text-white mb-1">{item.value}</div>
                 <div className="text-sm text-primary-300">{item.label}</div>
               </div>
-            ))}
+            ))}*/}
           </div>
         </div>
       </div>
