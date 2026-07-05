@@ -25,21 +25,27 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text */}
           <div className={`space-y-6 ${inView ? 'animate-fade-in-left' : 'opacity-0'}`}>
+          <div className="flex items-center justify-center min-h-screen px-6">
+          <div className="max-w-4xl text-center space-y-6">
             <p className="text-lg text-primary-200/80 leading-relaxed">
-              I am a passionate Full-Stack Developer dedicated to building modern, scalable, and user-friendly web applications. 
+              I am a passionate Full-Stack Developer dedicated to building modern, scalable, and user-friendly web applications.
               I enjoy transforming ideas into seamless digital experiences by combining intuitive frontend design with powerful backend functionality.
               My focus is on creating applications that are visually appealing, responsive, efficient, and optimized to deliver exceptional user experiences across all devices.
             </p>
+
             <p className="text-lg text-primary-200/80 leading-relaxed">
               My development philosophy centers on writing clean, maintainable, and well-structured code that is easy to scale and adapt as projects grow.
-              I continuously explore new technologies, frameworks, and best practices to improve my skills and deliver high-quality solutions. 
+              I continuously explore new technologies, frameworks, and best practices to improve my skills and deliver high-quality solutions.
               Every project is an opportunity to solve complex problems through thoughtful design and innovative development.
             </p>
+
             <p className="text-lg text-primary-200/80 leading-relaxed">
-              Beyond coding, I am driven by curiosity, creativity, and a commitment to continuous learning. 
-              I enjoy collaborating with teams, tackling challenging projects, and turning ambitious ideas into reality. 
+              Beyond coding, I am driven by curiosity, creativity, and a commitment to continuous learning.
+              I enjoy collaborating with teams, tackling challenging projects, and turning ambitious ideas into reality.
               My goal is to build impactful software that not only meets technical requirements but also provides meaningful value and memorable experiences for users.
             </p>
+          </div>
+        </div>
 
             <div className="flex flex-wrap gap-3 pt-4">
               {['React', 'TypeScript', 'Node.js', 'Python', 'C++'].map(tech => (
