@@ -22,7 +22,7 @@ export default function About() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col items-center gap-12">
           {/* Text */}
           <div className={`space-y-6 ${inView ? 'animate-fade-in-left' : 'opacity-0'}`}>
           <div className="flex justify-center">
