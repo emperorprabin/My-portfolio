@@ -25,8 +25,8 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text */}
           <div className={`space-y-6 ${inView ? 'animate-fade-in-left' : 'opacity-0'}`}>
-          <div className="flex items-center justify-center min-h-screen px-6">
-          <div className="max-w-4xl text-center space-y-6">
+          <div className="flex justify-center">
+          <div className="max-w-2xl text-center">
             <p className="text-lg text-primary-200/80 leading-relaxed">
               I am a passionate Full-Stack Developer dedicated to building modern, scalable, and user-friendly web applications.
               I enjoy transforming ideas into seamless digital experiences by combining intuitive frontend design with powerful backend functionality.
@@ -45,9 +45,11 @@ export default function About() {
               My goal is to build impactful software that not only meets technical requirements but also provides meaningful value and memorable experiences for users.
             </p>
           </div>
+          </div>
         </div>
 
-            <div className="flex flex-wrap gap-3 pt-4">
+          <div className="flex justify-center">
+            <div className="max-w-2xl text-center">
               {['React', 'TypeScript', 'Node.js', 'Python', 'C++'].map(tech => (
                 <span key={tech} className="px-4 py-2 glass rounded-full text-sm text-primary-300 font-medium hover:text-white hover:bg-primary-600/20 transition-all cursor-default">
                   {tech}
@@ -55,6 +57,7 @@ export default function About() {
               ))}
             </div>
           </div>
+        </div>
 
           {/* Stats cards */}
           <div className={`grid grid-cols-2 gap-4 ${inView ? 'animate-fade-in-right' : 'opacity-0'}`}>
@@ -74,7 +77,6 @@ export default function About() {
             ))}*/}
           </div>
         </div>
-      </div>
     </section>
   );
 }
