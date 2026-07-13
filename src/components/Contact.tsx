@@ -1,6 +1,8 @@
 import { Mail, MapPin,  Send } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+
 
 const socialLinks = [
   {
@@ -61,9 +63,22 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
-    setFormData({ name: '', email: '', message: '' });
+    emailjs.send(
+      'service_ojgngk7',
+      'template_ldqoo1d',
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      'm2mbz3kFIqc_LActG'
+    )
+    .then(() => {
+      setSent(true);
+    })
+    .catch((err) => {
+      console.error('Email failed to send:', err);
+    });
   };
 
   return (

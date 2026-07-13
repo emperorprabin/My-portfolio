@@ -10,6 +10,7 @@
     "prepare": "chmod +x node_modules/.bin/vite || true"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "clsx": "2.1.1",
     "lucide-react": "^1.17.0",
     "react": "19.2.6",
