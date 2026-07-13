@@ -1,7 +1,7 @@
 import { ArrowDown, Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const roles = ['Full Stack Developer', 'Problem Solver'];
+const roles = ['Electronics,Information and Communication Engineering Student'];
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);

@@ -103,8 +103,8 @@ export default function Skills() {
             </div>
           );
         })}
-
         {/* Skill level legend */}
+{/*
         <div className={`mt-12 glass rounded-2xl p-6 flex flex-wrap items-center justify-center gap-6 ${inView ? 'animate-fade-in-up delay-500' : 'opacity-0'}`}>
           <span className="text-sm text-primary-300 font-medium">Proficiency Level:</span>
           {[
@@ -120,6 +120,7 @@ export default function Skills() {
             </div>
           ))}
         </div>
+        */}
       </div>
     </section>
   );
