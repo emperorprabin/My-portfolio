@@ -1,24 +1,24 @@
-import { ExternalLink, Star, Code } from 'lucide-react';
+import { Code } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
 const projects = [
   {
     title: 'Auto-reply Chatbot System',
     description: 'An AI-powered chatbot system that automatically responds to user\'s messages using natural language processing and machine learning algorithms.',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Redis'],
+    tech: ['Python'],
     gradient: 'from-purple-600/20 to-pink-600/20',
     border: 'hover:border-purple-500/30',
-    stars: 128,
     emoji: '💬',
+    githubUrl:'https://github.com/emperorprabin/Autoreply-chatbot'
   },
   {
     title: 'Virtual Assistant Jarvis',
     description: 'An intelligent AI enforced virtual assistant that can perform tasks, answer questions, and provide information using voice commands and natural language understanding.',
-    tech: ['Python', 'TensorFlow', 'FastAPI', 'React', 'WebSocket'],
+    tech: ['Python'],
     gradient: 'from-blue-600/20 to-cyan-600/20',
     border: 'hover:border-blue-500/30',
-    stars: 256,
     emoji: '🤖',
+    githubUrl:'https://github.com/emperorprabin/AI-enforced-chat-assistant-Jarvis'
   },
 ];
 
@@ -63,10 +63,6 @@ export default function Projects() {
                   <h3 className="text-xl font-bold text-white group-hover:text-primary-300 transition-colors">
                     {project.title}
                   </h3>
-                  <div className="flex items-center gap-1 text-yellow-400 text-sm">
-                    <Star size={14} fill="currentColor" />
-                    <span>{project.stars}</span>
-                  </div>
                 </div>
                 <p className="text-primary-200/60 text-sm leading-relaxed mb-4">
                   {project.description}
@@ -79,11 +75,8 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <button className="flex items-center gap-2 px-4 py-2 glass rounded-xl text-sm text-primary-200 hover:text-white hover:bg-primary-600/20 transition-all">
-                    <Code size={16} /> Code
-                  </button>
-                  <button className="flex items-center gap-2 px-4 py-2 glass rounded-xl text-sm text-primary-200 hover:text-white hover:bg-primary-600/20 transition-all">
-                    <ExternalLink size={16} /> Demo
+                  <button onClick={() => window.open(project.githubUrl, '_blank')}>
+                    Code
                   </button>
                 </div>
               </div>
