@@ -9,18 +9,6 @@ import Contact from './components/Contact';
 export default function App() {
   return (
     <div className="min-h-screen bg-dark-500 text-primary-50 overflow-x-hidden">
-      {/* Particle-like background dots */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[10%] left-[15%] w-1 h-1 bg-primary-400/30 rounded-full animate-pulse" />
-        <div className="absolute top-[25%] right-[20%] w-1.5 h-1.5 bg-accent-400/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-[45%] left-[8%] w-1 h-1 bg-primary-300/25 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-[60%] right-[12%] w-1 h-1 bg-accent-400/20 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute top-[80%] left-[25%] w-1.5 h-1.5 bg-primary-400/20 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute top-[35%] left-[50%] w-1 h-1 bg-primary-500/15 rounded-full animate-pulse" style={{ animationDelay: '3s' }} />
-        <div className="absolute top-[70%] right-[35%] w-1 h-1 bg-accent-400/15 rounded-full animate-pulse" style={{ animationDelay: '2.5s' }} />
-        <div className="absolute top-[15%] left-[70%] w-1.5 h-1.5 bg-primary-400/20 rounded-full animate-pulse" style={{ animationDelay: '4s' }} />
-        <div className="absolute top-[90%] right-[60%] w-1 h-1 bg-primary-300/20 rounded-full animate-pulse" style={{ animationDelay: '3.5s' }} />
-      </div>
 
       {/* Navbar */}
       <Navbar />
@@ -38,7 +26,6 @@ export default function App() {
       {/* <Footer /> */}
 
       {/* Back to top button */}
-      <BackToTop />
     </div>
   );
 }

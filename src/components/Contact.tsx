@@ -3,7 +3,6 @@ import { useInView } from '../hooks/useInView';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-
 const socialLinks = [
   {
     name: 'GitHub',
@@ -53,11 +52,11 @@ const socialLinks = [
 
 const contactInfo = [
   { icon: Mail, label: 'Email', value: 'prabinjoshi2006@gmail.com', href: 'mailto:prabinjoshi2006@gmail.com' },
-  { icon: MapPin, label: 'Location', value: 'Kathmandu,Nepal', href: '#' },
+  { icon: MapPin, label: 'Location', value: 'Kathmandu,Nepal' },
 ];
 
 export default function Contact() {
-  const { ref, inView } = useInView(0.1);
+  const { ref} = useInView(0.1);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
 
@@ -87,7 +86,7 @@ export default function Contact() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className={`text-center mb-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
+        <div className="text-center mb-16">
           <span className="text-primary-400 font-mono text-sm tracking-widest uppercase">Get in Touch</span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-3 text-white">
             Let's Work <span className="text-linear">Together</span>
@@ -99,14 +98,14 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left: Contact info + Social */}
-          <div className={`space-y-8 ${inView ? 'animate-fade-in-left' : 'opacity-0'}`}>
+          <div>
             {/* Contact cards */}
             <div className="space-y-4">
               {contactInfo.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="flex items-center gap-5 glass glass-hover rounded-2xl p-5 group hover:-translate-x-1 transition-all duration-300"
+                  className="flex items-center gap-5 glass glass-hover rounded-2xl p-5 transition-all duration-300"
                 >
                   <div className="w-14 h-14 rounded-xl bg-linear-to-br from-primary-600 to-primary-700 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-primary-600/20">
                     <item.icon size={22} className="text-white" />
@@ -118,10 +117,10 @@ export default function Contact() {
                 </a>
               ))}
             </div>
-
+<br></br>
             {/* Social links */}
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Connect with me</h3>
+              <h3 className="text-lg font-semibold text-center text-white mb-4">Connect with me</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {socialLinks.map((social) => (
                   <a
@@ -141,7 +140,7 @@ export default function Contact() {
           </div>
 
           {/* Right: Contact form */}
-          <div className={`${inView ? 'animate-fade-in-right' : 'opacity-0'}`}>
+          <div>
             <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 space-y-6">
               <div>
                 <label className="block text-sm font-medium text-primary-300 mb-2">Your Name</label>

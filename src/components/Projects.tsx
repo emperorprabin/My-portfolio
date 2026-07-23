@@ -1,4 +1,5 @@
 import { useInView } from '../hooks/useInView';
+import SectionBackground from './SectionBackground';
 
 const projects = [
   {
@@ -11,7 +12,7 @@ const projects = [
     githubUrl:'https://github.com/emperorprabin/Autoreply-chatbot'
   },
   {
-    title: 'Virtual Assistant Jarvis',
+    title: 'Personal Virtual Assistant Jarvis',
     description: 'An intelligent AI enforced virtual assistant that can perform tasks, answer questions, and provide information using voice commands and natural language understanding.',
     tech: ['Python'],
     gradient: 'from-blue-600/20 to-cyan-600/20',
@@ -22,16 +23,17 @@ const projects = [
 ];
 
 export default function Projects() {
-  const { ref, inView } = useInView(0.1);
+  const { ref} = useInView(0.1);
 
   return (
-    <section id="projects" className="relative py-24 sm:py-32 bg-mesh" ref={ref}>
+    <section id="projects" className="relative py-24 sm:py-32" ref={ref}>
+      <SectionBackground />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className={`text-center mb-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
+        <div className="text-center mb-16">
           <span className="text-primary-400 font-mono text-sm tracking-widest uppercase">Portfolio</span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-3 text-white">
-            Featured <span className="text-gradient">Projects</span>
+            Featured <span className="text-white">Projects</span>
           </h2>
           <p className="mt-4 text-primary-200/60 text-lg max-w-2xl mx-auto">
             A selection of projects I've built and contributed to
@@ -43,9 +45,7 @@ export default function Projects() {
           {projects.map((project, i) => (
             <div
               key={project.title}
-              className={`group glass rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 ${project.border} border border-transparent ${
-                inView ? 'animate-fade-in-up' : 'opacity-0'
-              }`}
+              className={`group glass rounded-2xl overflow-hidden hover:-translate-y-2 transition-all duration-500 ${project.border} border`}
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               {/* Card top gradient */}
@@ -59,7 +59,7 @@ export default function Projects() {
               {/* Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-bold text-white group-hover:text-primary-300 transition-colors">
+                  <h3 className="text-xl font-bold text-white transition-colors">
                     {project.title}
                   </h3>
                 </div>
@@ -78,9 +78,9 @@ export default function Projects() {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
+                    className="flex items-center gap-2 px-4 py-1.5 bg-primary-600/10 hover:bg-primary-600/20 rounded-full text-sm place-items-center text-primary-300 transition-colors"
                   >
-                    Code
+                    {"<Code>"}
                   </a>
                 </div>
               </div>

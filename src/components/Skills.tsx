@@ -1,126 +1,79 @@
 import { useInView } from '../hooks/useInView';
+import SectionBackground from './SectionBackground';
 
-interface Skill {
-  name: string;
-  level: number;
-  color: string;
-  icon: string;
-  category: string;
-}
-
-const skills: Skill[] = [
-  // Frontend
-  { name: 'JavaScript', level: 75, color: 'from-yellow-400 to-yellow-600', icon: '⚡', category: 'Frontend' },
-  { name: 'TypeScript', level: 60, color: 'from-blue-400 to-blue-600', icon: '🔷', category: 'Frontend' },
-  { name: 'React', level: 60, color: 'from-cyan-400 to-cyan-600', icon: '⚛️', category: 'Frontend' },
-  { name: 'HTML/CSS', level: 85, color: 'from-orange-400 to-red-500', icon: '🎨', category: 'Frontend' },
-
-  // Backend
-  { name: 'Python', level: 80, color: 'from-green-400 to-emerald-600', icon: '🐍', category: 'Backend' },
-  { name: 'Node.js', level: 60, color: 'from-lime-400 to-green-600', icon: '🟢', category: 'Backend' },
-  { name: 'C++', level: 70, color: 'from-indigo-400 to-indigo-600', icon: '⚙️', category: 'Backend' },
-
-  // Tools & Others
-  { name: 'SQL', level: 60, color: 'from-blue-500 to-indigo-600', icon: '🗄️', category: 'Tools' },
-  { name: 'Git', level: 70, color: 'from-orange-400 to-orange-600', icon: '📦', category: 'Tools' },
-  { name: 'Numpy', level: 80, color: 'from-pink-400 to-pink-600', icon: '◈', category: 'Tools' },
-  { name: 'Pandas', level: 80, color: 'from-purple-400 to-purple-600', icon: '📊', category: 'Tools' },
-  { name: 'PyTorch', level: 60, color: 'from-purple-400 to-purple-600', icon: '🔥', category: 'Tools' },
+const categories = [
+  {
+    title: 'Frontend',
+    icon: '🎯',
+    skills: [
+      { icon: '⚡', name: 'JavaScript' },
+      { icon: '🔷', name: 'TypeScript' },
+      { icon: '⚛️', name: 'React' },
+      { icon: '🎨', name: 'HTML/CSS' },
+    ],
+  },
+  {
+    title: 'Backend',
+    icon: '🛠️',
+    skills: [
+      { icon: '🐍', name: 'Python' },
+      { icon: '🟢', name: 'Node.js' },
+      { icon: '⚙️', name: 'C++' },
+    ],
+  },
+  {
+    title: 'Tools & DevOps',
+    icon: '🔧',
+    skills: [
+      { icon: '🗄️', name: 'SQL' },
+      { icon: '📦', name: 'Git' },
+      { icon: '🔷', name: 'Numpy' },
+      { icon: '📊', name: 'Pandas' },
+      { icon: '🔥', name: 'PyTorch' },
+    ],
+  },
 ];
 
-function SkillBar({ skill, delay, animate }: { skill: Skill; delay: number; animate: boolean }) {
+function SkillBox({ icon, name }: { icon: string; name: string }) {
   return (
-    <div
-      className={`glass glass-hover rounded-2xl p-5 group hover:-translate-y-1 transition-all duration-500 ${
-        animate ? 'animate-fade-in-up' : 'opacity-0'
-      }`}
-      style={{ animationDelay: `${delay}s` }}
-    >
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-3">
-          <span className="text-2xl">{skill.icon}</span>
-          <span className="font-semibold text-white text-sm sm:text-base">{skill.name}</span>
-        </div>
-        <span className="text-sm font-mono font-bold text-primary-300">{skill.level}%</span>
-      </div>
-      <div className="h-2.5 bg-dark-300 rounded-full overflow-hidden">
-        <div
-          className={`h-full rounded-full bg-linear-to-r ${skill.color} transition-all duration-1000 ${
-            animate ? 'animate-progress-fill' : ''
-          }`}
-          style={{ width: animate ? `${skill.level}%` : '0%', animationDelay: `${delay + 0.3}s` }}
-        />
-      </div>
+    <div className="flex items-center gap-3 px-5 py-4 rounded-xl border border-white/10 bg-dark-300/40 hover:bg-dark-300/70 transition-all duration-300">
+      <span className="text-2xl">{icon}</span>
+      <span className="font-medium text-white text-sm sm:text-base">{name}</span>
     </div>
   );
 }
 
-
-
 export default function Skills() {
-  const { ref, inView } = useInView(0.1);
-
-  const categories = ['Frontend', 'Backend', 'Tools'];
+  const { ref } = useInView(0.1);
 
   return (
     <section id="skills" className="relative py-24 sm:py-32" ref={ref}>
-      {/* Background decorations */}
-      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-primary-500/30 to-transparent" />
-      <div className="absolute top-1/3 right-0 w-72 h-72 bg-primary-600/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/3 left-0 w-72 h-72 bg-accent-500/5 rounded-full blur-3xl" />
-
+      <SectionBackground />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header */}
-        <div className={`text-center mb-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <span className="text-primary-400 font-mono text-sm tracking-widest uppercase">My Skills</span>
+        <div className="text-center mb-16">
+          <span className="text-primary-400 font-mono text-sm tracking-widest uppercase">Expertise</span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-3 text-white">
-            Technologies & <span className="text-gradient">Expertise</span>
+            Skills & <span className="text-white">Tools</span>
           </h2>
-          <p className="mt-4 text-primary-200/60 text-lg max-w-2xl mx-auto">
-            Here's a snapshot of the programming languages, frameworks, and tools I work with
-          </p>
         </div>
 
-        {/* Skills by category */}
-        {categories.map((category) => {
-          const categorySkills = skills.filter(s => s.category === category);
-          return (
-            <div key={category} className="mb-12">
-              <h3 className={`text-xl font-bold text-primary-300 mb-6 flex items-center gap-3 ${inView ? 'animate-fade-in-left' : 'opacity-0'}`}>
-                <span className="w-8 h-0.5 bg-linear-to-r from-primary-500 to-transparent" />
-                {category === 'Frontend' ? '🎯 Frontend' : category === 'Backend' ? '🛠️ Backend' : '🔧 Tools & DevOps'}
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {categorySkills.map((skill, i) => (
-                  <SkillBar
-                    key={skill.name}
-                    skill={skill}
-                    delay={i * 0.1}
-                    animate={inView}
-                  />
+        <div className="space-y-14">
+          {categories.map((cat) => (
+            <div key={cat.title}>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-px bg-primary-500/50" />
+                <span className="text-lg">{cat.icon}</span>
+                <h3 className="text-xl font-bold text-white">{cat.title}</h3>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {cat.skills.map((skill) => (
+                  <SkillBox key={skill.name} icon={skill.icon} name={skill.name} />
                 ))}
               </div>
             </div>
-          );
-        })}
-        {/* Skill level legend */}
-{/*
-        <div className={`mt-12 glass rounded-2xl p-6 flex flex-wrap items-center justify-center gap-6 ${inView ? 'animate-fade-in-up delay-500' : 'opacity-0'}`}>
-          <span className="text-sm text-primary-300 font-medium">Proficiency Level:</span>
-          {[
-            { label: 'Expert', range: '90-100%', color: 'bg-green-500' },
-            { label: 'Advanced', range: '75-89%', color: 'bg-blue-500' },
-            { label: 'Intermediate', range: '60-74%', color: 'bg-yellow-500' },
-            { label: 'Learning', range: '<60%', color: 'bg-orange-500' },
-          ].map(level => (
-            <div key={level.label} className="flex items-center gap-2 text-sm text-primary-200/70">
-              <span className={`w-3 h-3 rounded-full ${level.color}`} />
-              <span>{level.label}</span>
-              <span className="font-mono text-xs text-primary-400">({level.range})</span>
-            </div>
           ))}
         </div>
-        */}
       </div>
     </section>
   );

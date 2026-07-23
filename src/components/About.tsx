@@ -1,5 +1,6 @@
 //import { Code2, Palette, Zap, Coffee } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
+import SectionBackground from './SectionBackground';
 
 /*const highlights = [
   { icon: Code2, label: 'Clean Code', value: 'Learning', color: 'from-purple-500 to-indigo-500' },
@@ -12,19 +13,20 @@ export default function About() {
   const { ref, inView } = useInView(0.2);
 
   return (
-    <section id="about" className="relative py-24 sm:py-32 bg-mesh" ref={ref}>
+    <section id="about" className="relative py-24 sm:py-32" ref={ref}>
+      <SectionBackground />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className={`text-center mb-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
+        <div className="text-center mb-16">
           <span className="text-primary-400 font-mono text-sm tracking-widest uppercase">About Me</span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-3 text-white">
-            Turning Ideas Into <span className="text-gradient">Reality</span>
+            Turning Ideas Into <span className="text-white">Reality</span>
           </h2>
         </div>
 
         <div className="flex flex-col items-center gap-12">
           {/* Text */}
-          <div className={`space-y-6 ${inView ? 'animate-fade-in-left' : 'opacity-0'}`}>
+          <div className="space-y-6">
           <div className="flex justify-center">
           <div className="max-w-2xl text-center">
             <p className="text-lg text-primary-200/80 leading-relaxed">
